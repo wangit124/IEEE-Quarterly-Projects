@@ -2,6 +2,8 @@
 
 Home for IEEE Quarterly Projects Competitions, where 2k+ students apply quarterly and compete to make the best hardware and software projects! Winners get internship opportunities at sponsor companies. Hosted quarterly in September, January, and March!
 
+https://github.com/user-attachments/assets/c91cbd9d-9b64-4cff-b145-cde06b0dde81
+
 ## Get Started
 
 ### Dependencies 
