@@ -2,17 +2,8 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 from datetime import date
-from gdstorage.storage import GoogleDriveStorage, GoogleDrivePermissionType, GoogleDrivePermissionRole, GoogleDriveFilePermission
 from django.core.validators import MaxValueValidator, MinValueValidator
 import json
-
-permission = GoogleDriveFilePermission(
-   GoogleDrivePermissionRole.READER,
-   GoogleDrivePermissionType.USER,
-   "foo@mailinator.com"
-)
-
-gd_storage = GoogleDriveStorage()
 
 class team(models.Model):
     name = models.CharField(max_length=100)
@@ -164,8 +155,6 @@ class QPApplication(models.Model):
 
     teammates = models.TextField(null=True, blank=True,
         max_length=1000, help_text='Hoping to work with other people? Please list their full name, email and major. (eg: John Smith, jsmith@gmail.com, ECE)')
-
-    # resume_upload = models.FileField(null=True, blank=True, upload_to='resumes/', storage=gd_storage, help_text='Please upload your resume in "firstname_lastname_CV.pdf" format')
 
     team = models.ForeignKey(team, null=True, on_delete=models.SET_NULL)
 

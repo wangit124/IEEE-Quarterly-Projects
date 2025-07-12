@@ -13,7 +13,10 @@ class AdvancedModelChoiceField(models.ModelMultipleChoiceField):
             return self._choices
         return AdvancedModelChoiceIterator(self)
     
-    choices = property(_get_choices, fields.MultipleChoiceField._set_choices)
+    def _set_choices(self, value):
+        self._choices = value
+
+    choices = property(_get_choices, _set_choices)
 
 class ScoreApplicationForm(forms.ModelForm):
     score = forms.IntegerField()

@@ -37,9 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
    	'landing',
-    'dashboard.apps.DashboardConfig',
-    'widget_tweaks',
-    'gdstorage',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -75,23 +73,18 @@ WSGI_APPLICATION = 'ieeeqpucsd.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'qp_data',
-      		'USER': 'ieeeqpuc_qpuser',
-      		'PASSWORD': '234Ar234',
-      		'HOST': 'ieeeqpdatabase.c4mjy5wjqljf.us-east-1.rds.amazonaws.com',
-      		'PORT': '3306',
-    	'OPTIONS': {
-            'sql_mode': 'STRICT_TRANS_TABLES',
-        }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'maelstrom124',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
-DATABASE_URL = 'mysql://ieeeqpuc_qpuser:234Ar234@ieeeqpdatabase.c4mjy5wjqljf.us-east-1.rds.amazonaws.com:3306/qp_data'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -136,7 +129,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfile')
 STATIC_URL = '/staticfile/'
-
-GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = os.path.join(BASE_DIR, 'google_drive_credentials/ieeeqpucsd-87d648edb1e9.json')
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
