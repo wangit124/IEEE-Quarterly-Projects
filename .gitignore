@@ -1,6 +1,10 @@
 # Text backup files
 *.bak
+bin
 include
+lib
 google_drive_credentials
 env
 .env
+token.pickle
+*.Python
